@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  group: one
+  user: one
+  is_favorite: false
+
+two:
+  name: MyString
+  group: two
+  user: two
+  is_favorite: false
