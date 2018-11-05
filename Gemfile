@@ -18,7 +18,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.0'
 gem 'ransack'
 gem 'rack-cors', :require => 'rack/cors'
-
+gem 'activerecord-import'
+gem 'jwt'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -14,10 +14,11 @@ class Encrypter
         cipher.key = key
         encrypted = cipher.update plain_text
         encrypted << cipher.final
-        encrypted
+        Base64.encode64(encrypted)
     end
 
     def self.decrypt(encrypted_text)
+        encrypted_text = Base64.decode64(encrypted_text)
         cipher = OpenSSL::Cipher.new 'AES-128-CBC'
         cipher.decrypt
         pwd = Rails.application.secrets.secret_key_base[0..32]
