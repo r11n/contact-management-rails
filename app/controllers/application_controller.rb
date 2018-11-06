@@ -6,6 +6,7 @@ class ApplicationController < ActionController::API
     before_action :authorize_request, except: [:allowed_domains]
     
     def allowed_domains
+        # raise ExceptionHandler::AuthenticationError
         render json: {domains: AllowedDomain.all.pluck(:domain)}
     end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_082720) do
+ActiveRecord::Schema.define(version: 2018_11_06_040212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_082720) do
   end
 
   create_table "contact_addresses", force: :cascade do |t|
-    t.string "type"
+    t.string "contact_type"
     t.bigint "contact_id"
     t.string "address"
     t.datetime "created_at", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_082720) do
   end
 
   create_table "contact_emails", force: :cascade do |t|
-    t.string "type"
+    t.string "contact_type"
     t.bigint "contact_id"
     t.string "email"
     t.datetime "created_at", null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_082720) do
   end
 
   create_table "contact_numbers", force: :cascade do |t|
-    t.string "type"
+    t.string "contact_type"
     t.bigint "contact_id"
     t.string "number"
     t.datetime "created_at", null: false

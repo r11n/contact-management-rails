@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
     before_action :set_group, only: [:show, :update, :destroy, :toggle_status]
     def index
-        render json: current_user.groups
+        render json: current_user.groups.left_joins(:contacts).select('groups.*', 'count(contacts.*)').group('groups.id').order(:id)
     end
 
     def show
