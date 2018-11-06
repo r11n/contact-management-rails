@@ -1,4 +1,4 @@
-# Contact Management System
+# Contact Management System Back End
 
 Users can sign-up using company emails(only domains allowed by admin eg: if `company1.com`, `company2.com` are the allowed domains then users can only sign-up with those domains only). Users can create groups to manage contacts with support to alter the status of group. User can create any number of contacts with in group.
 
