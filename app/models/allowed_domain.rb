@@ -1,5 +1,6 @@
 class AllowedDomain < ApplicationRecord
     validates_uniqueness_of :domain
+    validates_presence_of :domain
 
     def self.save_domains(domain_params)
         puts domain_params

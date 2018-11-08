@@ -17,10 +17,6 @@ class ApplicationController < ActionController::API
     end
 
     def is_admin
-       if current_user.present? && current_user.is_admin?
-            render json: {is_admin: true}
-       else
-            render json: {is_admin: false}
-       end 
+       render json: {is_admin: (current_user.present? && current_user.is_admin?)}
     end
 end

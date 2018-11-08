@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
         if @contact.save
             render json: @contact, status: :created
         else
-            render json: @contact.errors, status: :unprocessable_entity
+            render json: contact_params, status: :unprocessable_entity
         end
     end
 

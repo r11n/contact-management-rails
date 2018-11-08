@@ -1,6 +1,9 @@
 class User < ApplicationRecord
     has_secure_password
+    
+    before_validation :encrypt_identity
 
+    validate :email_in_allowed_domains?
     validates_uniqueness_of :email, :personal_identity_number
     validates_presence_of :email, :name, :personal_identity_number
 
@@ -8,10 +11,8 @@ class User < ApplicationRecord
     has_many :contacts, dependent: :destroy
     has_many :user_roles, dependent: :destroy
     has_many :roles,through: :user_roles
-
+    
     attr_accessor :plain_identity
-    before_validation :encrypt_identity
-    validate :email_in_allowed_domains?
     
     def is_admin?
         roles.any?{|k| k.name == 'admin'}
